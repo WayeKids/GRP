@@ -17,6 +17,8 @@ var ModelUser = require('./src/Domain/user.js');
 var ModelNews = require('./src/Domain/news.js');
 //variable de session user
 var coUser;
+//Variable pour le port
+var port = Number(process.env.PORT || 5000);
 
 //Dossier lorsqu'un chemin n'est pas indiqué pour les fichier html
 app.use(express.static('public'));
@@ -209,7 +211,7 @@ app.post('/writeANew', function (req, res) {
 //Si aucune routes
 app.use(function (req, res, next) {
   res.setHeader('Content-Type', 'text/plain');
-  res.send(404, 'Page inexistante');
+  res.status(404).send('Page inexistante');
 });
 
-app.listen(4000);
+app.listen(port);
