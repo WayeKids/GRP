@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row">
+  <form class="col s12" method="post">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="alias" name="alias" type="text" class="validate">
+        <label for="alias">Alias GRP</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="password" name="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="mail" name="mail" type="email" class="validate">
+        <label for="mail" data-error="wrong" data-success="right">Email</label>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit">Send<i class="material-icons right">send</i></button>
+  </form>
+</div>
+{% endblock %}

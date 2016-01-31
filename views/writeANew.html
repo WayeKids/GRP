@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row">
+<form id="formWriteNew" class="col s12" method="post">
+  <div class="row">
+    <div class="input-field col s3">
+      <input name="titre" id="titre" type="text" placeholder="titre"  class="validate">
+      <label for="titre">Titre</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">mode_edit</i>
+      <textarea name="article" id="article" class="materialize-textarea validate"></textarea>
+      <label for="article">Article</label>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn waves-effect waves-light" type="submit">Send<i class="material-icons right">send</i></button>
+  </div>
+</form>
+</div>
+{% endblock %}

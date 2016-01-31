@@ -1,0 +1,15 @@
+footer  {
+  position:fixed;
+  bottom:0;
+  width: 100%;
+  height: auto;;
+}
+
+main {
+  padding-left: 10em;
+  padding-right: 10em;
+}
+
+#formWriteNew {
+  margin-top: 5em;
+}

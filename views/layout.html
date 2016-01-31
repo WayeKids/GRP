@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--Importation icones google-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Importation materiliaze-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css">
+  <link type="text/css" rel="stylesheet" href="css/materialize.css">
+  <link type="text/css" rel="stylesheet" href="include/design.css">
+  <!--Optimisation pour mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ title }}</title>
+</head>
+<body>
+  <!--header -->
+  <header>
+    <!-- Dropdown Structure -->
+    {% if session.user %}
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Profil</a></li>
+        <li><a href="writeANew">AddNew</a></li>
+        <li class="divider"></li>
+        <li><a href="logout">Logout</a></li>
+      </ul>
+    {% else %}
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="signup">Inscription</a></li>
+        <li><a href="login">Connexion</a></li>
+      </ul>
+    {% endif %}
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          {% if session.user %}
+            <li><a href="viewNews">News</a></li>
+            <li><a href="events">Evenements</a></li>
+          {% endif %}
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <!-- footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">$oG</h5>
+          <p class="grey-text text-lighten-4">Bienvenu.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Utiles</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+    <!--On inclue les fichier js necessaire-->
+    <script type="text/javascript" src="include/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  {% if session.user %}
+    <p> Connecté </p>
+  {% else %}
+    <p> Déconnection réussite </p>
+  {% endif %}
+{% endblock %}
