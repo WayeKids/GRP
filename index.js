@@ -172,8 +172,34 @@ app.get('/logout', function (req, res) {
 
 //Get News
 app.get('/viewNews', function (req, res) {
-  res.render('viewNews', {
-    session: coUser
+
+  co.query('SELECT * FROM Sujets', function (err, row) {
+    if (err) {
+      console.log(err);
+      res.redirect('/home');
+    }
+    else {
+      //Tableau pour récupérer les données
+      var tab = [];
+      var resf = [];
+      for(var x in row) {
+        tab.push(row[x]);
+      }
+      for(var x in tab) {
+        //Modele de News
+        var n = new ModelNews();
+        n.setId(tab[x].id);
+        n.setTitre(tab[x].titre);
+        n.setArticle(tab[x].article);
+        n.setAlias(tab[x].alias);
+        resf.push(n);
+      }
+      req.session.news = resf;
+      res.render('viewNews', {
+        session: coUser,
+        final: resf
+      });
+    }
   })
 });
 

@@ -17,17 +17,17 @@ function News() {
       this.cde = id;
     },
     //Pour l'alias
-    getAlias : function () {
+    getTitre : function () {
       return this.titre;
     },
-    setAlias : function (t) {
+    setTitre : function (t) {
       this.titre = t;
     },
     //Pour l'article
-    getMail : function () {
+    getArticle : function () {
       return this.article;
     },
-    setMail : function (art) {
+    setArticle : function (art) {
       this.article = art;
     },
     //Pour l'alias
